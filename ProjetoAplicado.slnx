@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="API/API.csproj" />
+    <Project Path="Application/Application.csproj" Id="33855a4a-2b08-4594-9563-34408ca5a4be" />
+    <Project Path="Domain/Domain.csproj" Id="62287698-5475-4fe1-914a-e945c5ddc168" />
+    <Project Path="Infra/Infra.csproj" Id="00583355-3c9f-41e9-bb34-f403093a6167" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="Architecture.Tests/Architecture.Tests.csproj" Id="251221e5-f9e1-48b6-a14f-aba37f4e42e6" />
+    <Project Path="Domain.Tests/Domain.Tests.csproj" Id="22100710-a281-40be-b28c-1459e9d15373" />
+  </Folder>
+</Solution>
