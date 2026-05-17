@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <Folder Include="Common\Guard\" />
+    <Folder Include="Pedido\Enums\" />
+    <Folder Include="Pedido\Events\" />
   </ItemGroup>
 
 </Project>

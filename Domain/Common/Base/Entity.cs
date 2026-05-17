@@ -8,24 +8,24 @@ namespace Domain.Common.Base
     public abstract class Entity
     {
         public long Id { get; protected set; }
-        public DateTimeOffset DataCriacao { get; protected set; }
-        public DateTimeOffset? DataAtualizacao { get; protected set; }
+        public DateTime DataCriacao { get; protected set; }
+        public DateTime? DataAtualizacao { get; protected set; }
         public bool IsTransient() => Id == 0;
 
         protected Entity()
         {
-            DataCriacao = TimeProvider.System.GetUtcNow();
+            DataCriacao = DateTime.UtcNow;
         }
 
         protected Entity(long id)
         {
             Id = id;
-            DataCriacao = TimeProvider.System.GetUtcNow();
+            DataCriacao = DateTime.UtcNow;
         }
 
         protected void SetDataAtualizacao()
         {
-            DataAtualizacao = TimeProvider.System.GetUtcNow();
+            DataAtualizacao = DateTime.UtcNow;
         }
 
         public override bool Equals(object? obj)
