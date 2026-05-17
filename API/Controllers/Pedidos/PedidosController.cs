@@ -1,8 +1,10 @@
 ﻿using Application.Commands.PedidosCommands.CriarPedido;
+using Domain.Pedido.ValueObjects;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System.Runtime.ConstrainedExecution;
 
-namespace API.Controllers
+namespace API.Controllers.Pedidos
 {
     [ApiController]
     [Route("api/[controller]")]
@@ -15,18 +17,14 @@ namespace API.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("{id:long}")]
-        public async Task<IActionResult> ObterPedido(long id)
-        {
-            throw new NotImplementedException();
-        }
-
         [HttpPost]
-        public async Task<IActionResult> CriarPedido([FromBody] CriarPedidoCommand command)
+        public async Task<IActionResult> CriarPedido([FromBody] PedidoRequestDto request)
         {
+            var command = new CriarPedidoCommand(EnderecoEntrega.Criar(request.Cep, request.Bairro, request.Estado, request.Cidade, request.Complemento));
+
             var pedidoId = await _mediator.Send(command);
 
-            return CreatedAtAction(nameof(ObterPedido), new { id = pedidoId }, new { Id = pedidoId });
+            return Ok(new { id = pedidoId });
         }
     }
 }

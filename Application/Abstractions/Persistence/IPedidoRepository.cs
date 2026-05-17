@@ -7,8 +7,6 @@ namespace Application.Abstractions.Persistence
 {
     public interface IPedidoRepository
     {
-        Task<Pedido?> ObterPorIdAsync(long pedidoId, CancellationToken cancellationToken = default);
-
         Task AdicionarAsync(Pedido pedido, CancellationToken cancellationToken = default);
     }
 }

@@ -1,7 +1,8 @@
 
-using Infra.Persistence;
 using Application.Abstractions;
+using Infra.Persistence;
 using Microsoft.EntityFrameworkCore;
+using Scalar.AspNetCore;
 
 namespace API
 {
@@ -27,6 +28,8 @@ namespace API
             if (app.Environment.IsDevelopment())
             {
                 app.MapOpenApi();
+
+                app.MapScalarApiReference();
             }
 
             app.UseHttpsRedirection();

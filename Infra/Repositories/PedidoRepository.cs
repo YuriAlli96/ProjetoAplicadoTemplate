@@ -10,12 +10,11 @@ namespace Infra.Repositories
     {
         public Task AdicionarAsync(Pedido pedido, CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException();
-        }
+            // Implementação para adicionar um pedido ao banco de dados
 
-        public Task<Pedido?> ObterPorIdAsync(long pedidoId, CancellationToken cancellationToken = default)
-        {
-            throw new NotImplementedException();
+            // Return fake implementation for demonstration
+
+            return Task.CompletedTask;
         }
     }
 }
