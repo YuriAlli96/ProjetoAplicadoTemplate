@@ -1,6 +1,6 @@
-﻿namespace API.Controllers.Pedidos
+﻿namespace API.Dtos
 {
-    public class PedidoRequestDto
+    public class PedidoRequestViewModel
     {
         public string Cep { get; set; }
         public string Bairro { get; set; }

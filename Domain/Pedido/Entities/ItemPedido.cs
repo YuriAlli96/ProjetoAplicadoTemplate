@@ -28,6 +28,7 @@ namespace Domain.Pedido.Entities
             DomainValidator.Against<DomainException>(precoUnitario <= 0, "O preço unitário deve ser maior que zero.");
             DomainValidator.Against<DomainException>(quantidade <= 0, "A quantidade deve ser maior que zero.");
 
+            ProdutoId = produtoId;
             NomeProduto = nomeProduto;
             PrecoUnitario = precoUnitario;
             Quantidade = quantidade;

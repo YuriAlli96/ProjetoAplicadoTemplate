@@ -1,4 +1,5 @@
-﻿using Application.Commands.PedidosCommands.CriarPedido;
+﻿using API.Dtos;
+using Application.Commands.PedidosCommands.CriarPedido;
 using Domain.Pedido.ValueObjects;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -18,7 +19,7 @@ namespace API.Controllers.Pedidos
         }
 
         [HttpPost]
-        public async Task<IActionResult> CriarPedido([FromBody] PedidoRequestDto request)
+        public async Task<IActionResult> CriarPedido([FromBody] PedidoRequestViewModel request)
         {
             var command = new CriarPedidoCommand(EnderecoEntrega.Criar(request.Cep, request.Bairro, request.Estado, request.Cidade, request.Complemento));
 
